@@ -1,6 +1,5 @@
 
 <?=$this->extend("layout/web");?>
-
 <?=$this->section("content");?>
 
 <?php

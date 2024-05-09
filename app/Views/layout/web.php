@@ -9,10 +9,11 @@
 
 
 
-</head>
+    </head>
 <body>
     <div class="container"> <!-- Zobrazí content -->
-<?= $this->renderSection('content'); ?> 
+        <?=$this->renderSection("layout/navbar");?>
+        <?= $this->renderSection('content');?> 
     </div>
 </body>
 </html>
