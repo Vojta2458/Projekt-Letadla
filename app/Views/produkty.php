@@ -19,6 +19,7 @@ echo "<div class='col-lg-4 col-12 col-md-6 d-flex align-items-stretch mb-50 text
 echo "</div>";
 echo"</div>";
 }
+echo $pager->links();
 echo "</div>";
 $data = array(
     'class' => 'btn btn-secondary'

@@ -31,6 +31,7 @@ class Letadla extends BaseController
             'produkt_popis' => $popis, 
             'produkt_datum_vyroby' => $datum
         ]);
+        
 
         return view('produkty');
     }

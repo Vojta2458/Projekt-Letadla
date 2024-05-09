@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Controllers;
+use Config\UserConfig;
 
 use App\Models\Produkt_Model as PModel;
 
@@ -14,7 +15,9 @@ class Home extends BaseController
 
     public function index(): string
     {
-        $data["seznam"] = $this->pModel->orderBy('produkt_id', 'asc')->findAll();
+        $config = new UserConfig();
+        $data["seznam"] = $this->pModel->orderBy('produkt_id', 'asc')->paginate($config->pagerDomu);
+        $data ["pager"] = $this -> pModel -> pager;
         return view('produkty', $data);
     }
 
