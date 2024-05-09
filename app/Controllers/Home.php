@@ -17,4 +17,10 @@ class Home extends BaseController
         $data["seznam"] = $this->pModel->orderBy('produkt_id', 'asc')->findAll();
         return view('produkty', $data);
     }
+
+    public function detail($produkt_id): string
+    {
+        $data["seznam"] = $this->pModel->orderBy('produkt_id', 'asc')->find($produkt_id);
+        return view('detail_Produkt', $data);
+    }
 }
