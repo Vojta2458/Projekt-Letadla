@@ -1,28 +1,32 @@
-
 <?=$this->extend("layout/web");?>
 
 <?=$this->section("content");?>
 
 <?php
+echo "<div class='container mt-5'>";
 echo "<div class='row'>";
 
 foreach ($seznam as $index => $radek) {
-echo "<div class='col-lg-12 d-flex align-items-stretch mb-50 text-center'>
-
-<div class='card mb-3 primary text-black text-center' style='margin-top: 40px; width: 100%;''>
+echo "<div class='col-md-6 col-lg-4 mb-4 d-flex align-items-stretch'>
+<div class='card text-white bg-primary'>
 <div class='card-header'>
-<p class='text-bold'><strong style='margin-left: 10px;'>".anchor('detail/'.$radek->produkt_id, $radek->produkt_nazev)."</strong></p>
+<p class='font-weight-bold mb-0'>".anchor('detail/'.$radek->produkt_id, $radek->produkt_nazev, ['class' => 'text-white'])."</p>
 </div>
 <div class='card-body'>
-<p class='text-bold'><strong>Popis: </strong>".$radek->produkt_popis."</p>
+<p class='font-weight-bold'><strong>Popis: </strong>".$radek->produkt_popis."</p>
+</div>
+</div>
 </div>";
-echo "</div>";
-echo"</div>";
 }
+
+echo "</div>";
+echo "<div class='d-flex justify-content-center mt-4'>";
 echo $pager->links();
 echo "</div>";
 $data = array(
     'class' => 'btn btn-secondary'
 );
-echo anchor('vytvorit','PŘIDAT', $data);
+echo "<div class='text-center mt-4'>".anchor('vytvorit', 'PŘIDAT', $data)."</div>";
+echo "</div>";
 $this->endSection();?>
+
